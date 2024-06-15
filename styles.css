@@ -169,38 +169,42 @@ body, html
     z-index: 1;
 }
 
-@media (max-width: 768px) 
-{
-    .container 
-    {
-        width: 90%;
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Adjust the width for better spacing */
         margin: 20px auto;
+        padding: 15px; /* Increase padding for better touch interactions */
     }
 
-    h1 
-    {
-        font-size: 20px;
+    h1 {
+        font-size: 20px; /* Slightly smaller font size for headers */
     }
 
-    button 
-    {
-        padding: 10px;
+    form {
+        flex-direction: column; /* Stack form elements vertically */
     }
 
-    footer 
-    {
-        font-size: 12px;
+    label {
+        flex-direction: column; /* Ensure labels and inputs are stacked for clarity */
+        align-items: flex-start; /* Align text and checkboxes to the start */
     }
 
-    label 
-    {
-        flex-direction: column;
-        align-items: flex-start;
+    input[type="number"], input[type="checkbox"] {
+        margin-left: 0; /* Remove left margin for cleaner alignment */
+        width: 100%; /* Full width for better accessibility */
     }
 
-    input[type="number"], input[type="checkbox"] 
-    {
-        margin-left: 0;
+    input[type="checkbox"] {
+        margin-top: 10px; /* Add space between checkbox and preceding element */
+        align-self: center; /* Center checkbox if alone in its row */
+    }
+
+    button {
+        padding: 12px; /* Slightly larger padding for easier interaction */
+    }
+
+    footer {
+        font-size: 12px; /* Adjust footer font size to remain legible */
     }
 }
 
