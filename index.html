@@ -11,12 +11,14 @@
     <div class="container">
         <h1>Annual Fees Calculator</h1>
         <form id="feesForm">
-            <label for="creditHours">
-                Credit Hours <input type="number" id="creditHours" name="creditHours">
-            </label>
-            <label for="isSSE">
-                SSE Student <input type="checkbox" id="isSSE" name="isSSE">
-            </label>
+            <div class="form-group">
+                <label for="creditHours">Credit Hours</label>
+                <input type="number" id="creditHours" name="creditHours">
+            </div>
+            <div class="form-group">
+                <label for="isSSE">SSE Student</label>
+                <input type="checkbox" id="isSSE" name="isSSE">
+            </div>
             <button type="button" onclick="calculateAnnualFees()">Calculate</button>
         </form>
         <div id="result">
@@ -24,7 +26,7 @@
         </div>
     </div>
     <footer>
-        made by muzammil ahmed - 25020104 🥹🥹🥹 (not official)
+        made by muzammil ahmed - 25020104 🥹🥹🥹
     </footer>
     <script src="script.js"></script>
 </body>
