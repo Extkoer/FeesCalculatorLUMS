@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fees Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Annual Fees Calculator</h1>
+        <form id="feesForm">
+            <label for="creditHours">
+                Credit Hours: <input type="number" id="creditHours" name="creditHours">
+            </label>
+            <label for="isSSE">
+                SSE Student <input type="checkbox" id="isSSE" name="isSSE">
+            </label>
+            <button type="button" onclick="calculateAnnualFees()">Calculate Annual Fees</button>
+        </form>
+        <div id="result">
+            <h2>PKR <span id="annualFees">0</span></h2>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
