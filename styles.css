@@ -122,3 +122,48 @@ footer {
     to { transform: translateY(0); opacity: 1; }
 }
 
+@media (max-width: 768px) {
+    .container, form, h1, label, input, button, footer {
+        text-align: center; /* Center text for all elements within the container */
+        align-items: center; /* Align items centrally for flex containers */
+    }
+    
+    input[type="number"], input[type="checkbox"] {
+        margin-top: 5px;
+        width: 100%; /* Full width for inputs */
+    }
+
+    label {
+        flex-direction: column; /* Stack label text and input vertically */
+    }
+}
+
+label {
+    display: flex;
+    justify-content: space-between; /* Space between label text and input/checkbox */
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+input[type="checkbox"] {
+    flex: 0 0 auto; /* Do not grow or shrink */
+    margin-left: 10px; /* Space from the label text */
+    transform: scale(1.5); /* Larger size */
+    cursor: pointer;
+}
+
+@media (min-width: 769px) {
+    /* Align checkbox centrally relative to its label and increase size on desktop */
+    .form-group {
+        display: flex;
+        justify-content: center; /* Center the checkbox group horizontally */
+        align-items: center;
+    }
+    
+    input[type="checkbox"] {
+        transform: scale(2); /* Even larger on desktop */
+        margin-left: 20px; /* Increase margin for desktop */
+    }
+}
+
