@@ -1,92 +1,206 @@
-/* styles.css */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f2f5;
+body, html 
+{
     margin: 0;
     padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #F4F4F4, #E8E8E8);
     color: #333;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
 }
 
-.container {
-    max-width: 400px;
+#backgroundCanvas 
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.15);
+    z-index: 1;
+}
+
+.container 
+{
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
     margin: 50px auto;
     padding: 20px;
-    background: white;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 10px;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     text-align: center;
+    animation: slideUp 0.5s ease-out forwards;
 }
 
-h1 {
-    color: #0056b3;
+@keyframes slideUp 
+{
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+h1 
+{
+    color: #5C5C5C;
     font-size: 24px;
     margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
 }
 
-form {
-    margin: 20px 0;
+@keyframes fadeIn 
+{
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-label {
+form 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label 
+{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 0;
-    font-size: 16px;
-}
-
-input[type="number"], input[type="checkbox"] {
-    padding: 8px;
-    margin-top: 5px;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-}
-
-input[type="number"] {
-    width: 60%;
-}
-
-input[type="checkbox"] {
-    transform: scale(1.25);
-    margin-left: 10px;
-}
-
-button {
     width: 100%;
+    margin-bottom: 15px;
+}
+
+input[type="number"], input[type="checkbox"] 
+{
+    flex: 1;
     padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #BDBDBD;
+    background-color: #fff;
+    margin-left: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="number"]:focus, input[type="checkbox"]:focus 
+{
+    border-color: #2688ff;
+    box-shadow: 0 0 8px rgba(38, 136, 255, 0.6);
+}
+
+input[type="checkbox"] 
+{
+    flex: 0 0 auto;
+    margin-left: 10px;
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+button 
+{
+    width: 100%;
+    padding: 12px 20px;
     font-size: 16px;
-    background-color: #24a0ed;
+    background-color: #2688ff;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s ease-in-out;
+    overflow: hidden;
+    position: relative;
 }
 
-button:hover {
-    background-color: #007bff;
+button:hover 
+{
+    background-color: #1500fb;
+    animation: pulse 1s infinite;
 }
 
-#result h2 {
-    font-size: 20px;
-    color: #28a745;
+@keyframes pulse 
+{
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 
-footer {
+footer 
+{
     text-align: center;
     padding: 10px 0;
-    margin-top: 20px;
-    color: #666;
+    color: #FFF;
     font-size: 14px;
-    background-color: #f0f2f5;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    opacity: 0;
+    animation: fadeInFooter 1.5s ease-in 0.5s forwards;
 }
 
+@keyframes fadeInFooter 
+{
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
+body, html 
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, rgba(244, 244, 244, 0.6), rgba(232, 232, 232, 0.6)), url(https://img.freepik.com/free-vector/gradient-international-day-education-background_23-2151120687.jpg?t=st=1718461023~exp=1718464623~hmac=e8ff984ce90809fbc7dab71ab71ec67df0f48acb7a380a3d70ad9e5a9b70d8b0&w=996) no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+#backgroundCanvas 
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.15);
+    z-index: 1;
+}
+
+@media (max-width: 768px) 
+{
+    .container 
+    {
         width: 90%;
+        margin: 20px auto;
+    }
+
+    h1 
+    {
+        font-size: 20px;
+    }
+
+    button 
+    {
+        padding: 10px;
+    }
+
+    footer 
+    {
+        font-size: 12px;
+    }
+
+    label 
+    {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    input[type="number"], input[type="checkbox"] 
+    {
+        margin-left: 0;
     }
 }
 
