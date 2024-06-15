@@ -43,6 +43,17 @@ body, html {
     margin-bottom: 15px;
 }
 
+input[type="number"] {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #BDBDBD;
+    background-color: #fff;
+    margin-left: 10px;
+    transition: all 0.3s ease-in-out;
+    text-align: center; /* Center text inside the input */
+}
+
 @media (max-width: 768px) {
     .form-group {
         flex-direction: column;
@@ -86,11 +97,19 @@ footer {
     color: #FFF;
     font-size: 14px;
     background-color: rgba(0, 0, 0, 0.6);
-    position: absolute;
-    width: 100%;
+    position: fixed; /* Change from 'absolute' to 'fixed' to ensure visibility */
+    left: 0;
+    right: 0;
     bottom: 0;
-    opacity: 0;
+    opacity: 1; /* Ensure opacity is set to fully visible */
+    z-index: 10; /* Raise z-index to ensure it's above other content */
     animation: fadeInFooter 1.5s ease-in 0.5s forwards;
+}
+
+@media (max-width: 768px) {
+    footer {
+        font-size: 12px; /* Adjust font size for smaller screens */
+    }
 }
 
 @keyframes fadeInFooter {
