@@ -26,9 +26,9 @@ body, html {
     position: relative;
     z-index: 2;
     max-width: 600px;
-    width: 90%; /* Adjusts the width to be responsive */
-    margin: 50px auto;
-    padding: 20px;
+    width: 90%; /* Ensures container responsiveness */
+    margin: 20px auto;
+    padding: 15px;
     background-color: #FFFFFF;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -49,9 +49,9 @@ input[type="number"] {
     border-radius: 8px;
     border: 2px solid #BDBDBD;
     background-color: #fff;
-    margin-left: 10px;
+    margin-left: 0; /* Ensures no unnecessary space on the left causing overflow */
     transition: all 0.3s ease-in-out;
-    text-align: center; /* Center text inside the input */
+    text-align: center; /* Centers text inside the input */
 }
 
 @media (max-width: 768px) {
@@ -124,16 +124,27 @@ footer {
 
 @media (max-width: 768px) {
     .container, form, h1, label, input, button, footer {
-        text-align: center; /* Center text for all elements within the container */
-        align-items: center; /* Align items centrally for flex containers */
+        text-align: center;
+        align-items: center;
+    }
+
+    h1 {
+        font-size: 18px; /* Smaller font size to avoid splitting into two lines */
+        margin-bottom: 10px; /* Adjusted for better spacing */
     }
     
     input[type="number"], input[type="checkbox"] {
-        margin-top: 5px;
-        width: 100%; /* Full width for inputs */
+        width: 100%; /* Full width for inputs, avoiding overflow */
+        margin-top: 5px; /* Space between stacked elements */
+    }
+
+    .form-group {
+        flex-direction: column;
+        align-items: center; /* Ensures alignment is centered for all items */
     }
 
     label {
+        width: 100%; /* Full-width labels to match the input width */
         flex-direction: column; /* Stack label text and input vertically */
     }
 }
@@ -147,23 +158,22 @@ label {
 }
 
 input[type="checkbox"] {
-    flex: 0 0 auto; /* Do not grow or shrink */
-    margin-left: 10px; /* Space from the label text */
-    transform: scale(1.5); /* Larger size */
+    flex: 0 0 auto; /* Does not grow or shrink */
+    transform: scale(1.5); /* Adjust size as needed */
     cursor: pointer;
+    margin-top: 5px; /* Ensures spacing from preceding element */
 }
 
 @media (min-width: 769px) {
-    /* Align checkbox centrally relative to its label and increase size on desktop */
     .form-group {
         display: flex;
-        justify-content: center; /* Center the checkbox group horizontally */
+        justify-content: center;
         align-items: center;
     }
-    
+
     input[type="checkbox"] {
-        transform: scale(2); /* Even larger on desktop */
-        margin-left: 20px; /* Increase margin for desktop */
+        transform: scale(2); /* Larger size on desktop */
+        margin-left: 20px; /* Increased margin for desktop */
     }
 }
 
