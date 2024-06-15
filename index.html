@@ -7,23 +7,24 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <canvas id="backgroundCanvas"></canvas>
     <div class="container">
         <h1>Annual Fees Calculator</h1>
         <form id="feesForm">
             <label for="creditHours">
-                Credit Hours: <input type="number" id="creditHours" name="creditHours">
+                Credit Hours <input type="number" id="creditHours" name="creditHours">
             </label>
             <label for="isSSE">
                 SSE Student <input type="checkbox" id="isSSE" name="isSSE">
             </label>
-            <button type="button" onclick="calculateAnnualFees()">Calculate Annual Fees</button>
+            <button type="button" onclick="calculateAnnualFees()">Calculate</button>
         </form>
         <div id="result">
             <h2>PKR <span id="annualFees">0</span></h2>
         </div>
     </div>
     <footer>
-        made by muzammil ahmed - 25020104 🥹🥹🥹
+        made by muzammil ahmed - 25020104 🥹🥹🥹 (not official)
     </footer>
     <script src="script.js"></script>
 </body>
