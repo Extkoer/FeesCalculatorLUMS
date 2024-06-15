@@ -1,17 +1,18 @@
-body, html 
-{
+body, html {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(135deg, #F4F4F4, #E8E8E8);
+    background: linear-gradient(135deg, rgba(244, 244, 244, 0.6), rgba(232, 232, 232, 0.6)), 
+                url('https://img.freepik.com/free-vector/gradient-international-day-education-background_23-2151120687.jpg') 
+                no-repeat center center fixed;
+    background-size: cover;
     color: #333;
     height: 100vh;
     overflow: hidden;
     position: relative;
 }
 
-#backgroundCanvas 
-{
+#backgroundCanvas {
     position: absolute;
     top: 0;
     left: 0;
@@ -21,11 +22,11 @@ body, html
     z-index: 1;
 }
 
-.container 
-{
+.container {
     position: relative;
     z-index: 2;
     max-width: 600px;
+    width: 90%; /* Adjusts the width to be responsive */
     margin: 50px auto;
     padding: 20px;
     background-color: #FFFFFF;
@@ -35,70 +36,35 @@ body, html
     animation: slideUp 0.5s ease-out forwards;
 }
 
-@keyframes slideUp 
-{
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-h1 
-{
-    color: #5C5C5C;
-    font-size: 24px;
-    margin-bottom: 20px;
-    opacity: 0;
-    animation: fadeIn 1s ease-in forwards;
-}
-
-@keyframes fadeIn 
-{
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-form 
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-label 
-{
+.form-group {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     margin-bottom: 15px;
 }
 
-input[type="number"], input[type="checkbox"] 
-{
-    flex: 1;
-    padding: 10px;
-    border-radius: 8px;
-    border: 2px solid #BDBDBD;
-    background-color: #fff;
-    margin-left: 10px;
-    transition: all 0.3s ease-in-out;
+@media (max-width: 768px) {
+    .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    input[type="number"], input[type="checkbox"] {
+        width: 100%; /* Ensures inputs use the full width on smaller screens */
+        margin-top: 5px; /* Adds a little space between label and input */
+        margin-left: 0; /* Resets margin to ensure full-width usage */
+    }
+
+    .form-group label {
+        width: 100%; /* Ensures labels use the full width on smaller screens */
+    }
+
+    input[type="checkbox"] {
+        align-self: center; /* Centers the checkbox under its label on mobile */
+    }
 }
 
-input[type="number"]:focus, input[type="checkbox"]:focus 
-{
-    border-color: #2688ff;
-    box-shadow: 0 0 8px rgba(38, 136, 255, 0.6);
-}
-
-input[type="checkbox"] 
-{
-    flex: 0 0 auto;
-    margin-left: 10px;
-    transform: scale(1.5);
-    cursor: pointer;
-}
-
-button 
-{
+button {
     width: 100%;
     padding: 12px 20px;
     font-size: 16px;
@@ -107,26 +73,14 @@ button
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s ease-in-out;
-    overflow: hidden;
-    position: relative;
+    transition: background-color 0.3s;
 }
 
-button:hover 
-{
+button:hover {
     background-color: #1500fb;
-    animation: pulse 1s infinite;
 }
 
-@keyframes pulse 
-{
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-footer 
-{
+footer {
     text-align: center;
     padding: 10px 0;
     color: #FFF;
@@ -139,72 +93,13 @@ footer
     animation: fadeInFooter 1.5s ease-in 0.5s forwards;
 }
 
-@keyframes fadeInFooter 
-{
+@keyframes fadeInFooter {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
-body, html 
-{
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(135deg, rgba(244, 244, 244, 0.6), rgba(232, 232, 232, 0.6)), url(https://img.freepik.com/free-vector/gradient-international-day-education-background_23-2151120687.jpg?t=st=1718461023~exp=1718464623~hmac=e8ff984ce90809fbc7dab71ab71ec67df0f48acb7a380a3d70ad9e5a9b70d8b0&w=996) no-repeat center center fixed;
-    background-size: cover;
-    color: #333;
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
-}
-
-#backgroundCanvas 
-{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.15);
-    z-index: 1;
-}
-
-@media (max-width: 768px) {
-    .container {
-        margin: 20px auto;
-        padding: 15px;
-    }
-
-    h1 {
-        font-size: 20px;
-    }
-
-    form {
-        flex-direction: column;
-    }
-
-    label {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    input[type="number"], input[type="checkbox"] {
-        width: 100%;
-        margin-top: 5px;
-        margin-left: 0;
-    }
-
-    input[type="checkbox"] {
-        align-self: center; /* Adjust alignment to be centered below the label */
-        margin-top: 10px;
-    }
-
-    button {
-        padding: 10px;
-    }
-
-    footer {
-        font-size: 12px;
-    }
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
